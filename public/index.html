@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nagzira Boys Hostel Admission Form</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        height: auto;
+
+    }
+
+    input,
+    select {
+        background: rgb(240, 240, 240) !important;
+    }
+
+    .qualification-block>input,
+    .qualification-block select {
+        padding: .25rem;
+        margin: 0 .5rem;
+        border-radius: .375rem;
+        border: 1px solid #dee2e6;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    .qualification-block input:focus,
+    .qualification-block select:focus {
+        border-color: #86b7fe;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, .25);
+    }
+</style>
+
+<body>
+    <header class="d-flex align-items-center p-1">
+        <img src="/img/logoo.png" alt="" style="width: 10vw;">
+        <h1>Government Polytechnic Sakoli</h1>
+    </header>
+    <h3 class="text-center my-5 text-decoration-underline">Hostel Admission Form</h3>
+    <main>
+        <div class="container">
+            <form class="row" method="post" action="/submitted">
+                <h4>Personal Information</h4>
+                <div class="col-sm-6">
+
+                    <div class="mb-3">
+                        <label for="exampleInputName" class="form-label">Full Name of Student</label>
+                        <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp"
+                            name="Student_Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputYear" class="form-label">Year of Studying</label>
+                        <select class="form-select" aria-label="Default select example" id="exampleInputYear"
+                            onchange="TCCheck(this)" name="Study_year">
+                            <option selected>Select</option>
+                            <option value="First">First</option>
+                            <option value="Second">Second</option>
+                            <option value="Third">Third</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputStudyYear" class="form-label">Batch Year</label>
+                        <div class="d-flex align-items-center">
+                            <p class="m-0 mx-1">20</p>
+                            <input type="text" class="form-control mx-1" style="width:3rem" id="exampleInputStudyYear"
+                                aria-describedby="nameHelp" name="batchYearFrom" min="20" max="30">
+                            -
+                            <p class="m-0 mx-1">20</p>
+                            <input type="text" class="form-control mx-1" style="width:3rem" id="exampleInputStudyYear"
+                                aria-describedby="nameHelp" name="batchYearTo" min="20" max="30">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+
+                    <div class="mb-3">
+                        <label for="exampleInputPhoneNumber" class="form-label">Mobile Number</label>
+                        <input type="number" class="form-control" id="exampleInputPhoneNumber"
+                            aria-describedby="nameHelp" name="StudentPhone">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputFatherName" class="form-label">Full address of correspondence:</label>
+                        <textarea type="text" class="form-control" id="exampleInputFatherName"
+                            aria-describedby="nameHelp" name="StudentAddress"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputNationality" class="form-label">Nationality:</label>
+                        <input type="text" class="form-control" id="exampleInputNationality" aria-describedby="nameHelp"
+                            name="Nationality">
+                    </div>
+
+                    <div class="mb-3 w-100">
+                        <div class="row w-100">
+                            <div class="col-sm-4">
+                                <label for="exampleInputDOB" class="form-label">Date of Birth:</label>
+                                <input type="date" class="form-control" id="exampleInputDOB" aria-describedby="nameHelp"
+                                    name="DOB">
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="exampleInputAge" class="form-label">Age:</label>
+                                <input type="number" class="form-control" id="exampleInputAge"
+                                    aria-describedby="nameHelp" name="Age">
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="exampleInputBloodGrp" class="form-label">Blood Group:</label>
+                                <select class="form-select" aria-label="Default select example"
+                                    id="exampleInputBloodGrp" name="blood_group">
+                                    <option selected>Select</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <h4>Parent's / Guardian's Information</h4>
+                    <div class="mb-3">
+                        <label for="exampleInputFatherName" class="form-label">Father's / Guardian's Name</label>
+                        <input type="text" class="form-control" id="exampleInputFatherName" aria-describedby="nameHelp"
+                            name="parent_name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputFathersNumber" class="form-label">Father's / Guardian's Number</label>
+                        <input type="number" class="form-control" id="exampleInputFathersNumber"
+                            aria-describedby="nameHelp" name="parent_number">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputLocalParentName" class="form-label">Name of Guardian:</label>
+                        <input type="text" class="form-control" id="exampleInputLocalParentName"
+                            aria-describedby="nameHelp" name="guardian_name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputLocalParentName" class="form-label">Address of Guardian:</label>
+                        <textarea type="text" class="form-control" id="exampleInputLocalParentName"
+                            aria-describedby="nameHelp" name="guardian_address"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputCategory" class="form-label">Category 
+                            (Open/OBC/SC/ST /V.J./ B.J./Minority ):</label>
+                        <input type="text" class="form-control" id="exampleInputCategory" aria-describedby="nameHelp"
+                            name="category">
+                    </div>
+
+                </div>
+                <div class="qulifications my-5 py-4 border-top">
+                    <h4>Past Qualification Infomation</h4>
+                    <div class="add-qualification d-flex align-items-center">
+                        <button type="button"
+                            class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center"
+                            style="font-size: 2rem; width: 3rem; height: 3rem;" id="add-qual"
+                            onclick="addQualification()"><span class="material-symbols-outlined">
+                                add
+                            </span></button><label for="add-qual" class="mx-3 cursor-pointer">Add Qualification</label>
+                    </div>
+                    <div id="qualifications-container">
+                        <div class="row my-3 qualification-block">
+                            <select class="col-sm-3" aria-label="Default select example" name="qualification_1">
+                                <option selected>Select</option>
+                                <option value="SSC">SSC</option>
+                                <option value="First">First Year</option>
+                                <option value="Second">Second Year</option>
+                            </select>
+                            <input type="number" class="col-sm-2" aria-describedby="nameHelp"
+                                placeholder="Marks Obtained" name="marks_obt_1">
+                            <input type="number" class="col-sm-1" aria-describedby="nameHelp" placeholder="Percentage"
+                                name="percentage_1">
+                            <select class="col-sm-2" aria-label="Default select example" aria-placeholder="pass/failed"
+                                name="result_1">
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3" id="Tc-collect">
+                </div>
+
+
+                <button type="button" onclick="HandleSubmit()" class="my-4 mx-auto btn btn-primary"
+                    style="width: 5rem;">
+                    Submit
+                </button>
+            </form>
+
+        </div>
+    </main>
+    <script>
+        var qualCount = 1
+        function addQualification() {
+            if (qualCount >= 3) { return }
+            var div = document.createElement('div')
+            div.setAttribute('class', 'd-flex my-3 qualification-block row')
+            div.innerHTML = ` 
+            <select class="col-sm-3" aria-label="Default select example" name="qualification_${qualCount + 1}">
+                                <option selected>Select</option>
+                                <option value="SSC">SSC</option>
+                                <option value="First">First Year</option>
+                                <option value="Second">Second Year</option>
+                            </select>
+                            <input type="number" class="col-sm-2" aria-describedby="nameHelp"
+                                placeholder="Marks Obtained" name="marks_obt_${qualCount + 1}">
+                            <input type="number" class="col-sm-1" aria-describedby="nameHelp" placeholder="Percentage" name="percentage_${qualCount + 1}">
+                            <select class="col-sm-2" aria-label="Default select example" aria-placeholder="pass/failed" name="result_${qualCount + 1}">
+                                <option value="Pass">Pass</option>
+                                <option value="Fail">Fail</option>
+                            </select>
+
+            `
+            document.getElementById("qualifications-container").appendChild(div)
+            qualCount++
+        }
+        // function TCCheck(e) {
+        //     if (e.value == "First") {
+        //         document.getElementById('Tc-collect').innerHTML = `
+                
+        //         <label for="TCFile" class="text-danger">First year students should attach TC (Transfer Certificate)</label>
+        //             <input type="file" class="form-control" name="TCFile" id="TCFile">
+        //         `
+        //     }
+        //     else {
+        //         document.getElementById('Tc-collect').innerHTML = ``
+        //     }
+        // }
+        function HandleSubmit() {
+            if (confirm('Check if all the information is correct !')) { document.querySelector('form').submit() }
+            return;
+        }
+
+    </script>
+</body>
+
+</html>
